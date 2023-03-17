@@ -16,9 +16,21 @@ class AnalyzeForm extends React.Component {
         this.setState({ [property]: value });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
         console.log(this.state);
+        fetch('http://localhost:5000/analyze', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log('Something went wrong');
+        })
     }
 
     render() {
