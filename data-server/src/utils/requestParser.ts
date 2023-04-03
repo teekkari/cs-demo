@@ -8,7 +8,7 @@ interface HasSchema {
 }
 
 // Parse values from request.body based on given model
-const  parseRequest = <Model extends HasSchema>(req: Request, model: Model) => {
+const parseRequest = <Model extends HasSchema>(req: Request, model: Model) => {
 
     // Grab model properties from schema.paths
     const fields = Object.keys(model.schema.paths);

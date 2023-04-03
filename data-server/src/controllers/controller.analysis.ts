@@ -7,6 +7,7 @@ import Player from '../models/Player';
 import Position from '../models/Position';
 
 const addMatchInformation = async (req: Request, res: Response) => {
+    // returns values from body in an array, can be single or multiple
     const data = parseRequest(req, Match);
 
     try {
