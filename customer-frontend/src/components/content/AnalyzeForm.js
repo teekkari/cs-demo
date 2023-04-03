@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../common/Button';
 
 class AnalyzeForm extends React.Component {
     constructor(props) {
@@ -16,9 +17,13 @@ class AnalyzeForm extends React.Component {
         this.setState({ [property]: value });
     }
 
-    handleSubmit = async (event) => {
-        event.preventDefault();
+    searchWithMatchURL = () => {
+        // todo later. Currently only player name and map search supported
+    }
+
+    searchWithPlayerName = () => {
         console.log(this.state);
+        return;
         fetch('http://localhost:5000/analyze', {
             method: 'POST',
             headers: {
@@ -35,17 +40,20 @@ class AnalyzeForm extends React.Component {
 
     render() {
         return <div className=''>
-            <h2>Input player name and map</h2>
-            <div className='my-2'>
-                <label className='inline-block w-36' htmlFor='player'>Player name</label>
-                <input onChange={this.handleChange} className='border-[1px] rounded' id='player' name='player' />
+            <label className='text-xs'>Player name</label>
+            <input className='p-2 w-full mb-2 rounded-lg text-dark' name='player' onChange={this.handleChange} value={this.state.player} placeholder='Enter player e.g. s1mple' />
+            <label className='text-xs'>Map name</label>
+            <select className='p-2 w-full mb-2 text-dark rounded-lg' name='mapName' onChange={this.handleChange}>
+                <option value='' disabled selected>Choose map</option>
+                <option value='de_mirage'>de_mirage</option>
+                <option value='de_inferno'>de_inferno</option>
+                <option value='de_overpass'>de_overpass</option>
+                <option value='de_ancient'>de_ancient</option>
+            </select>
+            <div className='grid gap-2 grid-cols-2 mt-2'>
+              {/* <Button primary onClick={() => this.searchWithMatchURL()}>Search with match URL</Button> */}
+              <Button primary onClick={() => this.searchWithPlayerName()}>Search with player name</Button>
             </div>
-            <div className='my-2'>
-                <label className='inline-block w-36' htmlFor='mapName'>Map name</label>
-                <input onChange={this.handleChange} className='border-[1px] rounded' id='mapName' name='mapName' />
-            </div>
-
-            <input onClick={this.handleSubmit} className='bg-green-300 text-white px-5 py-2 mt-5 cursor-pointer transition-all relative top-0 hover:-top-1' type='submit' value='Analyze' />
         </div>;
     }
 }
