@@ -21,9 +21,9 @@ function App() {
               Gain <span className='text-accent'>advantage</span> over your enemies!
             </h1>
 
-            <p className='text-3xl mt-2'>Live insights into your Faceit game. Learn their positions, weaknesses and habits.</p>
+            <p className='text-2xl mt-2'>Live insights into your Faceit game. Learn their positions, weaknesses and habits.</p>
 
-            <p className='font-bold'>Get started</p>
+            <p className='font-bold mt-4'>Get started</p>
             <input className='p-2 w-full my-2 rounded-lg' />
             <div className='grid gap-2 grid-cols-2 mt-2'>
               <Button primary onClick={() => setShowAnalysis(true)}>Search with match URL</Button>
