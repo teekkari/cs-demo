@@ -30,25 +30,25 @@ function App() {
               <Button primary>Search with player name</Button>
             </div>
 
-            <div className='my-3'>
+            <div className='my-5'>
               <AnimateHeight duration={500} height={showAnalysis ? 'auto' : 0}>
                 <AnalysisView />
               </AnimateHeight>
             </div>
 
-            <div>
-                <h2 className='text-3xl text-primary'>Find performance positions of CT</h2>
-                <p>Lorem ipsum... sdfsd</p>
+            <div className='mb-5'>
+                <h2 className='text-3xl text-primary font-semibold mb-2'>Find common positions for players</h2>
+                <p>Our interactive heatmap gives you a great overview of where the enemies play often.</p>
             </div>
 
-            <div>
-                <h2 className='text-3xl text-primary'>Find performance positions of CT</h2>
-                <p>Lorem ipsum... sdfsd</p>
+            <div className='mb-5'>
+                <h2 className='text-3xl text-primary font-semibold mb-2'>See performance graph for enemies</h2>
+                <p>Find out where the enemy fumbles the bag and where they should be respected.</p>
             </div>
 
-            <div>
-                <h2 className='text-3xl text-primary'>Find performance positions of CT</h2>
-                <p>Lorem ipsum... sdfsd</p>
+            <div className='mb-5'>
+                <h2 className='text-3xl text-primary font-semibold mb-2'>Get overview of all enemy players</h2>
+                <p>We analyze their playstyle. Do they move around a lot, or stay in single positions. Are they the anchor or a rotator.</p>
             </div>
 
 
