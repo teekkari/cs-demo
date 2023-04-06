@@ -1,15 +1,21 @@
 import { Router } from "express";
 
 import {
-    startJob,
-    getJobStatus,
-    finishJob,
+    getAllJobs,
+    getJob,
+    createJob,
+    updateJob,
+    deleteJob,
 } from '../controllers/controller.jobs';
 
 const router = Router();
 
-router.post('/startJob', startJob);
-router.post('/getJobStatus', getJobStatus);
-router.post('/finishJob', finishJob);
+router.get('/', getAllJobs);
+router.get('/:id', getJob);
+router.post('/', createJob);
+router.put('/:id', updateJob);
+router.delete('/:id', deleteJob);
 
-export default router;
+
+const jobsRouter = router;
+export default jobsRouter;
